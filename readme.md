@@ -18,15 +18,15 @@ Phaser3 [Phaser - A fast, fun and free open source HTML5 game framework](https:/
 
 これを...
 
-** kore1 **
+![変更前](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/before.webp)
 
 こうして...
 
-** kore2 **
+![編集中](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/working.webp)
 
 こうじゃ！
 
-** kore3 **
+![完了](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/complete.webp)
 
 
 ## 準備
