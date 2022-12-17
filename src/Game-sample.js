@@ -51,8 +51,8 @@ export default class Game extends Phaser.Scene {
 
       /*
        * Step.3-b
-       * 画面(this)に
-       * 空の背景画像を追加(add.image)する
+       * 画面"this""に
+       * 空の背景画像を追加"add.image""する
        *
        * Step.3-c
        * 背景の移動量を調整".setScrollFactor"して
