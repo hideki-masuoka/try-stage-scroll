@@ -1,8 +1,8 @@
 export const createPlatformsTo = (pf) => {
     const width = 1280;
-    pf.create(600, 500, "platform");
-    pf.create(50, 350, "platform");
-    pf.create(750, 320, "platform");
+    pf.create(800, 500, "platform");
+    pf.create(250, 350, "platform");
+    pf.create(950, 320, "platform");
     pf.create(width * 0.5, 720 - 32, 'ground');
     pf.create(width * 1.5, 720 - 32, 'ground');
     pf.create(width * 2.5, 720 - 32, 'ground');
