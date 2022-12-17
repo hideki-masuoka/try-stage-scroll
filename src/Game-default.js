@@ -17,38 +17,127 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-      const width = this.scale.width;
-      const height = this.scale.height;
+      // 画面の幅と丈を取得しています
+      const 画面の幅 = this.scale.width;
+      const 画面の丈 = this.scale.height;
 
-      this.add.image(width * 0.5, height * 0.5, 'bg-sky')
-          .setScrollFactor(0);
+      /*
+       * 今回の任務は...
+       *
+       * Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
+       * Step.2 ステージの境界を設定する
+       * Step.3 空の背景を追加する
+       * Step.4 木の背景を追加して奥行きを表現する
+       *
+       * Mission Start!
+       *
+       */
 
-      this.add.image(0, height, 'bg-wood')
-          .setOrigin(0,0.75)
-          .setScrollFactor(0.25);
-      this.add.image(800, height, 'bg-wood')
-          .setOrigin(0,0.75)
-          .setScrollFactor(0.25);
-      this.add.image(800 * 2, height, 'bg-wood')
-          .setOrigin(0,0.75)
-          .setScrollFactor(0.25);
+      /*
+       * Step.3
+       * 空の背景を追加する
+       */
 
-      this.platforms = this.physics.add.staticGroup();
-      createPlatformsTo(this.platforms);
+      /*
+       * Step.3-a
+       * 空の背景画像に渡す情報を定義する
+       */
 
-      this.player = this.physics.add.sprite(100, 550, "alien");
-      createPlayerTo(this.player, this.anims);
+      /*
+       * Step.3-b
+       * 画面(this)に
+       * 空の背景画像を追加(add.image)する
+       *
+       * Step.3-c
+       * 背景の移動量を調整".setScrollFactor"して
+       * 空の背景画像が動かないようにする
+       */
 
-      this.cursors = this.input.keyboard.createCursorKeys();
-      this.physics.add.collider(this.player, this.platforms);
+      /*
+       * Step.4
+       * 木の背景を追加して奥行きを表現する
+       */
 
-      this.cameras.main.setBounds(0, 0, width * 3, height);
-      this.cameras.main.startFollow(this.player);
-      this.physics.world.setBounds(0, 0, width * 3, height);
+      /*
+       * Step.4-a
+       * 木の背景に渡す情報を定義する
+       */
+
+      /*
+       * Step.4-b
+       * 画面"this"に
+       * 木の背景画像を追加"add.image"する
+       *
+       * Step.4-c
+       * 背景の表示位置を調整".setOrigin"する
+       *
+       * Step.4-e
+       * 背景の移動量を調整".setScrollFactor"する
+       */
+
+      /*
+       * Step.4-d
+       * 木の背景画像を2枚追加して、
+       * 水平に並べる"木の背景.X座標 * 1"
+       *
+       * Step.4-e
+       * 背景の移動量を調整".setScrollFactor"する
+       */
+
+      // ここで既存の機能を呼び出しています
+      this.前回までのあらすじ();
+
+
+      /*
+       * Step.1
+       * メインカメラ"this.cameras.main"が
+       * プレイヤー・キャラクター"this.player"を
+       * 追いかけるように".startFollow"する
+       */
+
+      /*
+       * Step.2
+       * ステージの境界を設定する
+       */
+
+      /*
+       * Step.2-a
+       * このステージに渡す情報を定義する
+       */
+
+      /*
+       * Step.2-b
+       * メインカメラ"this.cameras.main"の
+       * 範囲を設定".setBounds"する
+       */
+
+      /*
+       * Step.2-c
+       * このステージ"this.physics.world"の
+       * 境界を設定".setBounds"する
+       */
+
+      /*
+       * Mission Complete?
+       */
 
   }
 
   update() {
       gogoPlayerTo(this.player, this.cursors);
   }
+
+    前回までのあらすじ() {
+        // 足場の追加
+        this.platforms = this.physics.add.staticGroup();
+        createPlatformsTo(this.platforms);
+
+        // プレイヤー・キャラクターの追加
+        this.player = this.physics.add.sprite(100, 550, "alien");
+        createPlayerTo(this.player, this.anims);
+
+        // 操作と衝突判定の追加
+        this.cursors = this.input.keyboard.createCursorKeys();
+        this.physics.add.collider(this.player, this.platforms);
+    }
 }

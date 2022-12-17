@@ -17,12 +17,30 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
+      // 画面の幅と丈を取得しています
       const 画面の幅 = this.scale.width;
       const 画面の丈 = this.scale.height;
 
       /*
-       * 画面(this)に空の背景画像を追加(add.image)する
-       * 背景の移動量を調整する
+       * 今回の任務は...
+       *
+       * Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
+       * Step.2 ステージの境界を設定する
+       * Step.3 空の背景を追加する
+       * Step.4 木の背景を追加して奥行きを表現する
+       *
+       * Mission Start!
+       *
+       */
+
+      /*
+       * Step.3
+       * 空の背景を追加する
+       */
+
+      /*
+       * Step.3-a
+       * 空の背景画像に渡す情報を定義する
        */
       const 空の背景 = {
           "X座標": 画面の幅 * 0.5,
@@ -30,14 +48,27 @@ export default class Game extends Phaser.Scene {
           "画像名": 'bg-sky',
           "移動量": 0
       };
+
+      /*
+       * Step.3-b
+       * 画面(this)に
+       * 空の背景画像を追加(add.image)する
+       *
+       * Step.3-c
+       * 背景の移動量を調整".setScrollFactor"して
+       * 空の背景画像が動かないようにする
+       */
       this.add.image(空の背景.X座標, 空の背景.Y座標, 空の背景.画像名)
           .setScrollFactor(空の背景.移動量);
 
       /*
-       * 画面(this)に木の背景画像を追加(add.image)する
-       * 背景の表示位置を調整する
-       * 背景を追加する
-       * 背景の移動量を調整する
+       * Step.4
+       * 木の背景を追加して奥行きを表現する
+       */
+
+      /*
+       * Step.4-a
+       * 木の背景に渡す情報を定義する
        */
       const 木の背景 = {
           "X座標": 800,
@@ -47,23 +78,58 @@ export default class Game extends Phaser.Scene {
           "Y位置調整": 0.75,
           "移動量": 0.25
       };
+
+      /*
+       * Step.4-b
+       * 画面"this"に
+       * 木の背景画像を追加"add.image"する
+       *
+       * Step.4-c
+       * 背景の表示位置を調整".setOrigin"する
+       *
+       * Step.4-e
+       * 背景の移動量を調整".setScrollFactor"する
+       */
       this.add.image(木の背景.X座標 * 0, 木の背景.Y座標, 木の背景.画像名)
           .setOrigin(木の背景.X位置調整, 木の背景.Y位置調整)
           .setScrollFactor(木の背景.移動量);
 
-      // 2枚目と3枚目の画像を追加する
+      /*
+       * Step.4-d
+       * 木の背景画像を2枚追加して、
+       * 水平に並べる"木の背景.X座標 * 1"
+       *
+       * Step.4-e
+       * 背景の移動量を調整".setScrollFactor"する
+       */
       this.add.image(木の背景.X座標 * 1, 木の背景.Y座標, 木の背景.画像名)
           .setOrigin(木の背景.X位置調整, 木の背景.Y位置調整)
           .setScrollFactor(木の背景.移動量);
+
       this.add.image(木の背景.X座標 * 2, 木の背景.Y座標, 木の背景.画像名)
           .setOrigin(木の背景.X位置調整, 木の背景.Y位置調整)
           .setScrollFactor(木の背景.移動量);
 
-      // ここで既存の機能を呼び出す
+      // ここで既存の機能を呼び出しています
       this.前回までのあらすじ();
 
+
       /*
-       * このステージにカメラを追加して横にスクロールさせる
+       * Step.1
+       * メインカメラ"this.cameras.main"が
+       * プレイヤー・キャラクター"this.player"を
+       * 追いかけるように".startFollow"する
+       */
+      this.cameras.main.startFollow(this.player);
+
+      /*
+       * Step.2
+       * ステージの境界を設定する
+       */
+
+      /*
+       * Step.2-a
+       * このステージに渡す情報を定義する
        */
       const このステージ = {
           "X座標": 0,
@@ -71,22 +137,34 @@ export default class Game extends Phaser.Scene {
           "幅": 画面の幅 * 3,
           "丈": 画面の丈
       };
-      // メインカメラの範囲を設定する
+
+      /*
+       * Step.2-b
+       * メインカメラ"this.cameras.main"の
+       * 範囲を設定".setBounds"する
+       */
       this.cameras.main.setBounds(
           このステージ.X座標,
           このステージ.Y座標,
           このステージ.幅,
           このステージ.丈
       );
-      // メインカメラがプレイヤー・キャラクターを追いかけるようにする
-      this.cameras.main.startFollow(this.player);
-      // このステージの境界を設定する
+
+      /*
+       * Step.2-c
+       * このステージ"this.physics.world"の
+       * 境界を設定".setBounds"する
+       */
       this.physics.world.setBounds(
           このステージ.X座標,
           このステージ.Y座標,
           このステージ.幅,
           このステージ.丈
       );
+
+      /*
+       * Mission Complete?
+       */
 
   }
 
