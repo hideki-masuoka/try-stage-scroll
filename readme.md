@@ -35,7 +35,7 @@ CodeSandboxにあるサンプルコードを、Webブラウザで開いて編集
 
 【サンプルコード】[focused-water-1y4xor - CodeSandbox](https://codesandbox.io/s/focused-water-1y4xor?file=/src/Game.js)
 
-![CodeSandbox](fig-01-jyunbi-a.png)
+![CodeSandbox](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-01-jyunbi-a.png)
 
 Game.jsファイルが表示されていることを確認します。
 
@@ -153,7 +153,7 @@ create() {
 
 **編集したファイルを保存するには、コントロールキーを押しながらSキーを押す【Ctrl+S】か、メニューバーから【File】を選択して【Save】をクリックします。**
 
-![File Save](fig-01-jyunbi-b.png)
+![File Save](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-01-jyunbi-b.png)
 
 
 **このサンプルコードは自由に編集しても大丈夫です。ページを再読込すると、元の内容に戻ります。**
@@ -167,7 +167,7 @@ create() {
 
 ## Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
 
-![Step.1](fig-02-step1-a.png)
+![Step.1](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step1-a.png)
 
 ```javascript
   /*
@@ -183,7 +183,7 @@ create() {
 
 コードを書いて変化を観察します。
 
-![Step.1実行結果](fig-02-step1-b.png)
+![Step.1実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step1-b.png)
 
 ## Step.2 ステージの境界を設定する
 
@@ -191,7 +191,7 @@ Step.1 でカメラがプレイヤーを追いかけるようになりました�
 しかし、見えない何かに遮られて途中から先に進めません。
 Step.2 では、ステージに境界を設定することで、プレイヤーがその境界内を動き回れるようにします。
 
-![Step.2](fig-02-step2-a.png)
+![Step.2](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step2-a.png)
 
 ### Step.2-a このステージに渡す情報を定義する
 
@@ -244,7 +244,7 @@ this.physics.world.setBounds(
 
 変化を観察します
 
-![Step.2 実行結果](fig-02-step2-b.png)
+![Step.2 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step2-b.png)
 
 ## Step.3 空の背景を追加する
 
@@ -303,7 +303,7 @@ this.add.image(空の背景.X座標, 空の背景.Y座標, 空の背景.画像�
 
 変化を観察します
 
-![Step.3 実行結果](fig-02-step3-a.png)
+![Step.3 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step3-a.png)
 
 ## Step.4 木の背景を追加して奥行きを表現する
 
@@ -418,7 +418,7 @@ this.add.image(木の背景.X座標 * 2, 木の背景.Y座標, 木の背景.画�
 
 変化を観察します
 
-![Step.4 実行結果](fig-02-step4-a.png)
+![Step.4 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step4-a.png)
 
 ## Step.5 改造タイム
 
