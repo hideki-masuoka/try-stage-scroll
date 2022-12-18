@@ -38,7 +38,7 @@ CodeSandboxにあるサンプルコードを、Webブラウザで開いて編集
 
 ![CodeSandbox](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-01-jyunbi-a.png)
 
-@[codesandbox](https://codesandbox.io/embed/focused-water-1y4xor?fontsize=14&hidenavigation=1&theme=dark)
+@[codesandbox](https://codesandbox.io/embed/focused-water-1y4xor?fontsize=14&hidenavigation=1&module=%2Fsrc%2FGame.js&theme=dark)
 
 Game.jsファイルが表示されていることを確認します。
 
