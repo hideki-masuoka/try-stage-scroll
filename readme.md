@@ -37,6 +37,8 @@ CodeSandboxにあるサンプルコードを、Webブラウザで開いて編集
 
 ![CodeSandbox](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-01-jyunbi-a.png)
 
+@[codesandbox](https://codesandbox.io/embed/focused-water-1y4xor?fontsize=14&hidenavigation=1&theme=dark)
+
 Game.jsファイルが表示されていることを確認します。
 
 今回は、このGame.jsファイルに書かれているcreate()関数の内容を編集します。
@@ -159,11 +161,12 @@ create() {
 **このサンプルコードは自由に編集しても大丈夫です。ページを再読込すると、元の内容に戻ります。**
     
 ## 今回の任務は...
-    * Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
-    * Step.2 ステージの境界を設定する
-    * Step.3 空の背景を追加する
-    * Step.4 木の背景を追加して奥行きを表現する
-    * Step.5 改造タイム
+
+* Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
+* Step.2 ステージの境界を設定する
+* Step.3 空の背景を追加する
+* Step.4 木の背景を追加して奥行きを表現する
+* Step.5 改造タイム
 
 ## Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
 
@@ -184,6 +187,12 @@ create() {
 コードを書いて変化を観察します。
 
 ![Step.1実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step1-b.png)
+
+#### 今回使用した機能は...
+
+> **startFollow**<br>
+> ゲームオブジェクトを追跡するようにカメラを設定します。<br>
+> [Phaser 3 API Documentation - Class: Camera](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#startFollow__anchor)
 
 ## Step.2 ステージの境界を設定する
 
