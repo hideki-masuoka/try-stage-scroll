@@ -11,7 +11,7 @@
 
 Phaser3 [Phaser - A fast, fun and free open source HTML5 game framework](https://phaser.io/) というWebゲームフレームワークを使用してJavaScriptでオブジェクトを操作するコードを書きます。
 
-内容は、主に各地のCoderDojoに参加しているNinja向けとなっており、時間内でチュートリアルを終え、独自の応用にチャレンジできる程度の分量としています。
+内容は、主に[各地のCoderDojo](https://coderdojo.jp/)に参加しているNinja向けとなっており、時間内でチュートリアルを終え、独自の応用にチャレンジできる程度の分量としています。
 
 また、一部の説明を簡略化するために、プロパティ名などに漢字を含む日本語を使用しています。
 
