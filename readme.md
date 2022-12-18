@@ -2,7 +2,8 @@
 
 この記事は、[CoderDojo Advent Calendar 2022 - Adventar](https://adventar.org/calendars/7381) の17日目の投稿であり、昨年2021年4月に公開した記事、[コードを書いて画面内のキャラクターを動かす](https://zenn.dev/fkumnk/articles/57a9a8d5267bbc) の精神的続編です。
 
-** 著者注：後日、文中にクラスリファレンスへのリンクを追記したい：12月17日現在 **
+著：[CoderDojo紫雲](https://zen.coderdojo.com/dojos/jp/takamatsu-kagawa-prefecture/shiun-kagawa) 増岡秀樹
+
 
 ## 概要
 
@@ -255,6 +256,16 @@ this.physics.world.setBounds(
 
 ![Step.2 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step2-b.png)
 
+#### 今回使用した機能は...
+
+> **Camera.setBounds**<br>
+> カメラの境界を設定します。境界は軸に合わせた長方形です。<br>
+> [Phaser 3 API Documentation - Class: Camera](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#setBounds__anchor)
+
+> **World.setBounds**<br>
+> 指定されたワールド ピクセル寸法に一致するように物理ワールドの境界を設定します。<br>
+> [Phaser 3 API Documentation - Class: World](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.World.html#setBounds__anchor)
+
 ## Step.3 空の背景を追加する
 
 Step.2 ではステージに境界を設定し、プレイヤーがその中を動き回れるようにしました。
@@ -313,6 +324,17 @@ this.add.image(空の背景.X座標, 空の背景.Y座標, 空の背景.画像�
 変化を観察します
 
 ![Step.3 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step3-a.png)
+
+#### 今回使用した機能は...
+
+> **Scene.add.image**<br>
+> 新しいイメージ ゲーム オブジェクトを作成し、シーンに追加します。<br>
+> [Phaser 3 API Documentation - Class: GameObjectFactory](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#image__anchor)
+
+> **Image.setScrollFactor**<br>
+> このゲーム オブジェクトのスクロール係数を設定します。 スクロール係数は、このゲーム オブジェクトに対するカメラの動きの影響を制御します。<br>
+> [Phaser 3 API Documentation - Class: Image](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setScrollFactor__anchor)
+
 
 ## Step.4 木の背景を追加して奥行きを表現する
 
@@ -428,6 +450,16 @@ this.add.image(木の背景.X座標 * 2, 木の背景.Y座標, 木の背景.画�
 変化を観察します
 
 ![Step.4 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step4-a.png)
+
+#### 今回使用した機能は...
+
+> **Image.setOrigin**<br>
+> このゲーム オブジェクトの原点を設定します。 値は 0 から 1 の範囲で与えられます。<br>
+> [Phaser 3 API Documentation - Class: Image](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setOrigin__anchor)
+
+> **木の背景.X座標 * 0**<br>
+> ここでは、背景を水平に並べるために、X座標を0倍、1倍、2倍としました。
+
 
 ## Step.5 改造タイム
 
@@ -588,6 +620,10 @@ this.add.image(木の背景.X座標 * 2, 木の背景.Y座標, 木の背景.画�
 今回の任務はこれで完了です。
 
 思いつく限り、自由に改造してみてください。
+
+
+
+**後日ここに参考動画を追加します：12月18日追記**
 
 
 ## What next?
