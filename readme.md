@@ -2,7 +2,8 @@
 
 この記事は、[CoderDojo Advent Calendar 2022 - Adventar](https://adventar.org/calendars/7381) の17日目の投稿であり、昨年2021年4月に公開した記事、[コードを書いて画面内のキャラクターを動かす](https://zenn.dev/fkumnk/articles/57a9a8d5267bbc) の精神的続編です。
 
-** 著者注：後日、文中にクラスリファレンスへのリンクを追記したい：12月17日現在 **
+著：[CoderDojo紫雲](https://zen.coderdojo.com/dojos/jp/takamatsu-kagawa-prefecture/shiun-kagawa) 増岡秀樹
+
 
 ## 概要
 
@@ -10,7 +11,7 @@
 
 Phaser3 [Phaser - A fast, fun and free open source HTML5 game framework](https://phaser.io/) というWebゲームフレームワークを使用してJavaScriptでオブジェクトを操作するコードを書きます。
 
-内容は、主に各地のCoderDojoに参加しているNinja向けとなっており、時間内でチュートリアルを終え、独自の応用にチャレンジできる程度の分量としています。
+内容は、主に[各地のCoderDojo](https://coderdojo.jp/)に参加しているNinja向けとなっており、時間内でチュートリアルを終え、独自の応用にチャレンジできる程度の分量としています。
 
 また、一部の説明を簡略化するために、プロパティ名などに漢字を含む日本語を使用しています。
 
@@ -36,6 +37,8 @@ CodeSandboxにあるサンプルコードを、Webブラウザで開いて編集
 【サンプルコード】[focused-water-1y4xor - CodeSandbox](https://codesandbox.io/s/focused-water-1y4xor?file=/src/Game.js)
 
 ![CodeSandbox](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-01-jyunbi-a.png)
+
+@[codesandbox](https://codesandbox.io/embed/focused-water-1y4xor?fontsize=14&hidenavigation=1&module=%2Fsrc%2FGame.js&theme=dark)
 
 Game.jsファイルが表示されていることを確認します。
 
@@ -159,11 +162,12 @@ create() {
 **このサンプルコードは自由に編集しても大丈夫です。ページを再読込すると、元の内容に戻ります。**
     
 ## 今回の任務は...
-    * Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
-    * Step.2 ステージの境界を設定する
-    * Step.3 空の背景を追加する
-    * Step.4 木の背景を追加して奥行きを表現する
-    * Step.5 改造タイム
+
+* Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
+* Step.2 ステージの境界を設定する
+* Step.3 空の背景を追加する
+* Step.4 木の背景を追加して奥行きを表現する
+* Step.5 改造タイム
 
 ## Step.1 メインカメラがプレイヤー・キャラクターを追いかけるようにする
 
@@ -184,6 +188,12 @@ create() {
 コードを書いて変化を観察します。
 
 ![Step.1実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step1-b.png)
+
+#### 今回使用した機能は...
+
+> **startFollow**<br>
+> ゲームオブジェクトを追跡するようにカメラを設定します。<br>
+> [Phaser 3 API Documentation - Class: Camera](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#startFollow__anchor)
 
 ## Step.2 ステージの境界を設定する
 
@@ -246,6 +256,16 @@ this.physics.world.setBounds(
 
 ![Step.2 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step2-b.png)
 
+#### 今回使用した機能は...
+
+> **Camera.setBounds**<br>
+> カメラの境界を設定します。境界は軸に合わせた長方形です。<br>
+> [Phaser 3 API Documentation - Class: Camera](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#setBounds__anchor)
+
+> **World.setBounds**<br>
+> 指定されたワールド ピクセル寸法に一致するように物理ワールドの境界を設定します。<br>
+> [Phaser 3 API Documentation - Class: World](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.World.html#setBounds__anchor)
+
 ## Step.3 空の背景を追加する
 
 Step.2 ではステージに境界を設定し、プレイヤーがその中を動き回れるようにしました。
@@ -304,6 +324,17 @@ this.add.image(空の背景.X座標, 空の背景.Y座標, 空の背景.画像�
 変化を観察します
 
 ![Step.3 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step3-a.png)
+
+#### 今回使用した機能は...
+
+> **Scene.add.image**<br>
+> 新しいイメージ ゲーム オブジェクトを作成し、シーンに追加します。<br>
+> [Phaser 3 API Documentation - Class: GameObjectFactory](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#image__anchor)
+
+> **Image.setScrollFactor**<br>
+> このゲーム オブジェクトのスクロール係数を設定します。 スクロール係数は、このゲーム オブジェクトに対するカメラの動きの影響を制御します。<br>
+> [Phaser 3 API Documentation - Class: Image](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setScrollFactor__anchor)
+
 
 ## Step.4 木の背景を追加して奥行きを表現する
 
@@ -419,6 +450,16 @@ this.add.image(木の背景.X座標 * 2, 木の背景.Y座標, 木の背景.画�
 変化を観察します
 
 ![Step.4 実行結果](https://raw.githubusercontent.com/hideki-masuoka/try-stage-scroll/main/static/fig-02-step4-a.png)
+
+#### 今回使用した機能は...
+
+> **Image.setOrigin**<br>
+> このゲーム オブジェクトの原点を設定します。 値は 0 から 1 の範囲で与えられます。<br>
+> [Phaser 3 API Documentation - Class: Image](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setOrigin__anchor)
+
+> **木の背景.X座標 * 0**<br>
+> ここでは、背景を水平に並べるために、X座標を0倍、1倍、2倍としました。
+
 
 ## Step.5 改造タイム
 
@@ -580,6 +621,9 @@ this.add.image(木の背景.X座標 * 2, 木の背景.Y座標, 木の背景.画�
 
 思いつく限り、自由に改造してみてください。
 
+### 実演動画
+
+https://youtu.be/93eZcx2O4wc
 
 ## What next?
 
